@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+
+nav {
+    display: flex;
+    background: linear-gradient(182.51deg, #FFB6B6 2.1%, rgba(234, 203, 203, 0.33) 113.45%);
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color : #353535;
+    font-family: 'DM Sans', sans-serif;
+    height: 60px;
+    align-items: center;
+}
+
+nav h4{
+    margin-top: 7px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width : 40%;
+    justify-content:flex-end;
+    margin-top: 15px;
+}
+
+nav ul li a {
+    color : #353535;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+    margin-left: 20px;
+    padding: 5px 20px 5px 20px;
+}
+
+nav ul li a:hover {
+    color : #353535;;
+    background-color: #FFF2F2;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+/*Hamburger menu*/
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height : 20px;
+    justify-content:space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width : 41px;
+    height : 28px;
+    left: -5.8px;
+    top: -3px;
+    opacity : 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width : 28px;
+    height :3px;    
+    border-radius: 3px;
+    background-color: #d38c8d;
+    transition: all 0.4s;
+}
+
+/*Hamburger Menu Animation*/
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: #EB6D6B;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: #EB6D6B;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+/* Responsive Breakpoint */
+
+
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        text-decoration: none;
+        padding: 0;
+        position: fixed;
+        top : 45px;
+        width: auto;
+        height: 100%;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background : linear-gradient(148.78deg, rgba(219, 157, 158, 0.095) 20.68%, rgba(237, 179, 178, 0.12) 77.16%), radial-gradient(117.34% 117.34% at 5.94% 0%, #FFE4E3 9.5%, #FFF2F2 51.19%, #FFB9BA 100%);
+        background-blend-mode: soft-light, normal;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide{
+        z-index: 10;
+        opacity : 1;
+        transform: translateX(50%);
+    }
+
+    nav ul li a {
+        margin-right: 20px;
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+
+    header{
+        padding-top: 0px;
+        align-items: center;
+    }
+
+    .headertitle{
+        text-align: center;
+    }
+
+    .headerparagraph{
+        text-align: center;
+    }
+
+    .button-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-intro img{
+        width: 700px;
+    }
+}
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    nav ul {
+        width : 50%;
+    }
+}
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+
+}
+
+/* // `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+    
+}
+
+
+
+header{
+    padding-top: 60px;
+    background: #FFEEEE;
+}
+
+.imgforheader{
+    width: 70%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: none;
+    border-radius: 30% 30% 10px 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imgforheader img{
+    position: relative;
+    width: 100%;
+}
+
+.headertitle {
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 20px;
+    padding-top: 80px;
+}
+
+.th{
+    font-size: 20px;
+}
+
+.headerparagraph {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+}
+
+header .imgforheader img{
+    width: 100%;
+    align-items:unset;
+}
+
+a.button-function{
+    background: none;
+    border-radius: 10px;
+    border: 3px solid #EB6D6B;
+    margin-top: 10px;
+    padding: 15px 20px 15px 20px;
+    color:#EB6D6B;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+a.button-function:hover {
+    background-color: #fff6f6; 
+    color: #353535;
+}
+
+main{
+    background-color: #ffffff;
+}
+
+.intro-title{
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bolder;
+}
+
+.intro-description{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 17px;
+    font-family: 'Sora', sans-serif;
+    line-height: 30px;
+}
+
+.image-intro{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.image-intro img{
+    margin: auto;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    box-shadow: 0px 4px 80px rgba(255, 0, 0, 0.4);
+}
+
+.button {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wishes-for-mom {
+    background-color: #FFEEEE;
+}
+
+.wishes-title{
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bolder;
+}
+
+img#mom-and-xiang-photo {
+    width: 70%;
+    margin: 20px auto 0 auto;
+    border-radius: 50%;
+    border: 5px solid white ;
+    box-shadow: 10px 4px 100px rgba(255, 255, 255, 0.596);
+}
+
+img#photo-only {
+    width: 90%;
+    margin: 20px auto 0 auto;
+    border-radius: 3px;
+    border: 5px solid white ;
+    box-shadow: 10px 4px 100px rgba(255, 255, 255, 0.596);
+}
+
+.card{
+    margin-bottom: 20px;
+}
+
+#memories {
+    background-color: #fa9c9c;
+}
+
+.memories-title{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bolder;
+}
+
+#carouselExampleIndicators{
+    width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+footer img{
+    width: 100%;
+}
